@@ -2,19 +2,16 @@
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import AssignmentIcon  from '@mui/icons-material/Pageview';
-import { green, pink } from '@mui/material/colors';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import {pink } from '@mui/material/colors';
+// import { maxWidth } from '@mui/system';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { maxWidth } from '@mui/system';
+import Card from '@mui/material/Card';
+
 
 const Login = () => {
 
@@ -27,13 +24,14 @@ const Login = () => {
           password: data.get('password'),
         });
     };
-      
-    
-    return(
-        
-                <Container component="main" maxWidth="xs">
-                    <CssBaseline />
+       
+     
+    return (
+        <Container  maxWidth="xs">
+
+                <Card sx={{  marginTop: 10,   maxWidth : "xs", height: 450}} > 
                     <Box
+                            
                         sx={{
                             marginTop: 8,
                             display: 'flex',
@@ -41,14 +39,8 @@ const Login = () => {
                             alignItems: 'center',
                         }}
                     >
-                        <Avatar sx={{ bgcolor: pink[500] }}>
-                            
-                        </Avatar>
-                        
-                        
-                        {/* <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}> */}
-                            {/* <LockOutlinedIcon /> */}
-                        {/* </Avatar> */}
+                            <Avatar sx={{  bgcolor: pink[500] }}>  
+                            </Avatar> 
                         <Typography component="h1" variant="h5">
                             Inicia Sesion ...
                         </Typography>
@@ -62,7 +54,7 @@ const Login = () => {
                                 name="email"
                                 autoComplete="email"
                                 autoFocus />
-                            <TextField
+                            <TextField                              
                                 margin="normal"
                                 required
                                 fullWidth
@@ -71,9 +63,7 @@ const Login = () => {
                                 type="password"
                                 id="password"
                                 autoComplete="current-password" />
-                            <FormControlLabel
-                                control={<Checkbox value="remember" color="primary" />}
-                                label="Recuerdame..." />
+                            
                             <Button
                                 type="submit"
                                 fullWidth
@@ -83,11 +73,6 @@ const Login = () => {
                                 Registrarse
                             </Button>
                             <Grid container>
-                                {/* <Grid item xs>
-                                    <Link href="#" variant="body2">
-                                        Forgot password?
-                                    </Link>
-                                </Grid> */}
                                 <Grid item >
                                     <Link href="#" variant="body2"  >
                                         {"No tienes una cuenta? Registrate..."}
@@ -96,15 +81,18 @@ const Login = () => {
                             </Grid>
                         </Box>
                     </Box>
-             
-                </Container>
-         
+
+        
+                 </Card>
+
+        </Container>
+        
+       
+           
+       
     );
         
-
-
-
-   
+  
         
 };
 
